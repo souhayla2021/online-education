@@ -1,0 +1,56 @@
+backend_cours:
+    resource: "@AppBundle/Resources/config/routing_backend/cours.yml"
+    prefix:   /cours
+
+backend_formation:
+    resource: "@AppBundle/Resources/config/routing_backend/formation.yml"
+    prefix:   /formation
+
+backend_matiere:
+    resource: "@AppBundle/Resources/config/routing_backend/matiere.yml"
+    prefix:   /matiere
+
+backend_apprenant:
+    resource: "@AppBundle/Resources/config/routing_backend/apprenant.yml"
+    prefix:   /apprenant
+
+backend_inscription:
+    resource: "@AppBundle/Resources/config/routing_backend/inscription.yml"
+    prefix:   /inscription
+
+backend_user:
+    resource: "@AppBundle/Resources/config/routing_backend/user.yml"
+    prefix:   /user
+
+backend_formateur:
+    resource: "@AppBundle/Resources/config/routing_backend/formateur.yml"
+    prefix:   /formateur
+
+backend_document:
+    resource: "@AppBundle/Resources/config/routing_backend/document.yml"
+    prefix:   /document
+
+backend_image:
+    resource: "@AppBundle/Resources/config/routing_backend/image.yml"
+    prefix:   /image
+
+
+
+
+
+
+
+
+
+page_contact:
+    path:     /contactez-nous
+    defaults: { _controller: AppBundle:Default:contact }
+    #page_contact : nom du roote
+    #path : lien
+    #Default : nom du controleur
+    #contact : nom d'action
+
+
+page_acceuil:
+    path:     /surffer-ici
+    defaults: { _controller: AppBundle:Default:surffer }

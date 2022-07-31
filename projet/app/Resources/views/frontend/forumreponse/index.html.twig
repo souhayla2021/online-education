@@ -1,0 +1,34 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Forumreponses list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Datecreation</th>
+                <th>Datemodification</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for forumReponse in forumReponses %}
+            <tr>
+                <td><a href="{{ path('forumreponse_show', { 'id': forumReponse.id }) }}">{{ forumReponse.id }}</a></td>
+                <td>{% if forumReponse.dateCreation %}{{ forumReponse.dateCreation|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>{% if forumReponse.dateModification %}{{ forumReponse.dateModification|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('forumreponse_show', { 'id': forumReponse.id }) }}">show</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    
+{% endblock %}

@@ -1,0 +1,23 @@
+app_cours:
+    resource: "@AppBundle/Resources/config/routing/cours.yml"
+    prefix:   /cours
+app_matiere:
+    resource: "@AppBundle/Resources/config/routing/matiere.yml"
+    prefix:   /matiere
+
+app_homepage:
+    path:     /
+    defaults: { _controller: AppBundle:Default:index }
+
+page_contact:
+    path:     /contactez-nous
+    defaults: { _controller: AppBundle:Default:contact }
+    #page_contact : nom du roote
+    #path : lien
+    #Default : nom du controleur
+    #contact : nom d'action
+
+
+page_acceuil:
+    path:     /surffer-ici
+    defaults: { _controller: AppBundle:Default:surffer }

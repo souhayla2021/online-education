@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Forumreponse</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ forumReponse.id }}</td>
+            </tr>
+            <tr>
+                <th>Datecreation</th>
+                <td>{% if forumReponse.dateCreation %}{{ forumReponse.dateCreation|date('Y-m-d H:i:s') }}{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Datemodification</th>
+                <td>{% if forumReponse.dateModification %}{{ forumReponse.dateModification|date('Y-m-d H:i:s') }}{% endif %}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('forumreponse_index') }}">Back to the list</a>
+        </li>
+    </ul>
+{% endblock %}

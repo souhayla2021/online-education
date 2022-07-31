@@ -1,0 +1,40 @@
+{% extends 'backend/base.html.twig' %}
+
+{% block body %}
+    <h1>Apprenants list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nom</th>
+                <th>Prenom</th>
+                <th>Numtel</th>
+                <th>Datenaissance</th>
+                <th>Adresse</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for apprenant in apprenants %}
+            <tr>
+                <td><a href="{{ path('apprenant_show', { 'id': apprenant.id }) }}">{{ apprenant.id }}</a></td>
+                <td>{{ apprenant.nom }}</td>
+                <td>{{ apprenant.prenom }}</td>
+                <td>{{ apprenant.numTel }}</td>
+                <td>{% if apprenant.dateNaissance %}{{ apprenant.dateNaissance|date('Y-m-d') }}{% endif %}</td>
+                <td>{{ apprenant.adresse }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('apprenant_show', { 'id': apprenant.id }) }}">show</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    
+{% endblock %}

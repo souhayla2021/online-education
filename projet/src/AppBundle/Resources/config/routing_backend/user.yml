@@ -1,0 +1,27 @@
+user_index:
+    path:     /
+    defaults: { _controller: "AppBundle:User:indexBackend" }
+    methods:  GET
+
+user_show:
+    path:     /{id}/show
+    defaults: { _controller: "AppBundle:User:showBackend" }
+    methods:  GET
+
+user_new:
+    path:     /new
+    defaults: { _controller: "AppBundle:User:newBackend" }
+    methods:  [GET, POST]
+
+user_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "AppBundle:User:editBackend" }
+    methods:  [GET, POST]
+
+user_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "AppBundle:User:deleteBackend" }
+    methods:  DELETE
+
+
+

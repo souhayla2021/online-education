@@ -1,0 +1,12 @@
+forumsujet_index:
+    path:     /
+    defaults: { _controller: "AppBundle:ForumSujet:index" }
+    methods:  GET
+
+forumsujet_show:
+    path:     /{id}/show
+    defaults: { _controller: "AppBundle:ForumSujet:show" }
+    methods:  GET
+
+
+

@@ -1,0 +1,24 @@
+matiere_index:
+    path:     /
+    defaults: { _controller: "AppBundle:Matiere:indexBackend" }
+    methods:  GET
+
+matiere_show:
+    path:     /{id}/show
+    defaults: { _controller: "AppBundle:Matiere:showBackend" }
+    methods:  GET
+
+matiere_new:
+    path:     /new
+    defaults: { _controller: "AppBundle:Matiere:newBackend" }
+    methods:  [GET, POST]
+
+matiere_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "AppBundle:Matiere:editBackend" }
+    methods:  [GET, POST]
+
+matiere_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "AppBundle:Matiere:deleteBackend" }
+    methods:  DELETE

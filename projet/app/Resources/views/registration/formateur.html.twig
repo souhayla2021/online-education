@@ -1,0 +1,10 @@
+<h2>inscrire formateur</h2>
+
+{% trans_default_domain 'FOSUserBundle' %}
+
+<form action="{{ path('formateur_registration') }}"  method="POST">
+    {{ form_widget(form) }}
+    <div>
+        <input type="submit" value="{{ 'registration.submit'|trans }}" />
+    </div>
+</form>

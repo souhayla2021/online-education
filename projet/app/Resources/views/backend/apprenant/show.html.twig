@@ -1,0 +1,40 @@
+{% extends 'backend/base.html.twig' %}
+
+{% block body %}
+    <h1>Apprenant</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ apprenant.id }}</td>
+            </tr>
+            <tr>
+                <th>Nom</th>
+                <td>{{ apprenant.nom }}</td>
+            </tr>
+            <tr>
+                <th>Prenom</th>
+                <td>{{ apprenant.prenom }}</td>
+            </tr>
+            <tr>
+                <th>Numtel</th>
+                <td>{{ apprenant.numTel }}</td>
+            </tr>
+            <tr>
+                <th>Datenaissance</th>
+                <td>{% if apprenant.dateNaissance %}{{ apprenant.dateNaissance|date('Y-m-d') }}{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Adresse</th>
+                <td>{{ apprenant.adresse }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('apprenant_index') }}">Back to the list</a>
+        </li>
+    </ul>
+{% endblock %}

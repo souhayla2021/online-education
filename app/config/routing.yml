@@ -1,0 +1,14 @@
+app_backend:
+    resource: "@AppBundle/Resources/config/routing_backend.yml"
+    prefix:   /administration
+
+#app_frontend:
+#    resource: "@AppBundle/Resources/config/routing_frontend.yml"
+#    prefix:   /
+
+fos_user:
+    resource: "@FOSUserBundle/Resources/config/routing/all.xml"
+
+formateur_registration:
+    path:  /inscription/formateur
+    defaults: { _controller: AppBundle:RegistrationFormateur:register}

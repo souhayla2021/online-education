@@ -1,0 +1,12 @@
+document_index:
+    path:     /
+    defaults: { _controller: "AppBundle:Document:index" }
+    methods:  GET
+
+document_show:
+    path:     /{id}/show
+    defaults: { _controller: "AppBundle:Document:show" }
+    methods:  GET
+
+
+

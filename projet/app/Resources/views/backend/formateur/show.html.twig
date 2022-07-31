@@ -1,0 +1,44 @@
+{% extends 'backend/base.html.twig' %}
+
+{% block body %}
+    <h1>Formateur</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ formateur.id }}</td>
+            </tr>
+            <tr>
+                <th>Nom</th>
+                <td>{{ formateur.nom }}</td>
+            </tr>
+            <tr>
+                <th>Prenom</th>
+                <td>{{ formateur.prenom }}</td>
+            </tr>
+            <tr>
+                <th>Numtel</th>
+                <td>{{ formateur.numTel }}</td>
+            </tr>
+            <tr>
+                <th>Type</th>
+                <td>{{ formateur.type }}</td>
+            </tr>
+            <tr>
+                <th>Datenaissance</th>
+                <td>{% if formateur.dateNaissance %}{{ formateur.dateNaissance|date('Y-m-d') }}{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Adresse</th>
+                <td>{{ formateur.adresse }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('formateur_index') }}">Back to the list</a>
+        </li>
+    </ul>
+{% endblock %}

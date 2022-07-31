@@ -1,0 +1,44 @@
+{% extends 'backend/base.html.twig' %}
+
+{% block body %}
+    <h1>Formations list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nom</th>
+                <th>Slug</th>
+                <th>Description</th>
+                <th>Datedebut</th>
+                <th>Datefin</th>
+                <th>Datecreation</th>
+                <th>Datemodification</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for formation in formations %}
+            <tr>
+                <td><a href="{{ path('formation_show', { 'id': formation.id }) }}">{{ formation.id }}</a></td>
+                <td>{{ formation.nom }}</td>
+                <td>{{ formation.slug }}</td>
+                <td>{{ formation.description }}</td>
+                <td>{% if formation.dateDebut %}{{ formation.dateDebut|date('Y-m-d') }}{% endif %}</td>
+                <td>{% if formation.dateFin %}{{ formation.dateFin|date('Y-m-d') }}{% endif %}</td>
+                <td>{% if formation.dateCreation %}{{ formation.dateCreation|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>{% if formation.dateModification %}{{ formation.dateModification|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('formation_show', { 'id': formation.id }) }}">show</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    
+{% endblock %}

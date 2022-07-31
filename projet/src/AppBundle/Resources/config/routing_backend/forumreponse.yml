@@ -1,0 +1,12 @@
+forumreponse_index:
+    path:     /
+    defaults: { _controller: "AppBundle:ForumReponse:indexBackend" }
+    methods:  GET
+
+forumreponse_show:
+    path:     /{id}/show
+    defaults: { _controller: "AppBundle:ForumReponse:showBackend" }
+    methods:  GET
+
+
+

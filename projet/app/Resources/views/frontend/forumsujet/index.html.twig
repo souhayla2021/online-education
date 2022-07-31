@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Forumsujets list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Titre</th>
+                <th>Slug</th>
+                <th>Datecreation</th>
+                <th>Datemodification</th>
+                <th>Contenu</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for forumSujet in forumSujets %}
+            <tr>
+                <td><a href="{{ path('forumsujet_show', { 'id': forumSujet.id }) }}">{{ forumSujet.id }}</a></td>
+                <td>{{ forumSujet.titre }}</td>
+                <td>{{ forumSujet.slug }}</td>
+                <td>{% if forumSujet.dateCreation %}{{ forumSujet.dateCreation|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>{% if forumSujet.dateModification %}{{ forumSujet.dateModification|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>{{ forumSujet.contenu }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('forumsujet_show', { 'id': forumSujet.id }) }}">show</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    
+{% endblock %}

@@ -1,0 +1,12 @@
+image_index:
+    path:     /
+    defaults: { _controller: "AppBundle:Image:indexBackend" }
+    methods:  GET
+
+image_show:
+    path:     /{id}/show
+    defaults: { _controller: "AppBundle:Image:showBackend" }
+    methods:  GET
+
+
+

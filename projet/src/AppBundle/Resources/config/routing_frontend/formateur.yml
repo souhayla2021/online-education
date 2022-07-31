@@ -1,0 +1,12 @@
+formateur_index:
+    path:     /
+    defaults: { _controller: "AppBundle:Formateur:index" }
+    methods:  GET
+
+formateur_show:
+    path:     /{id}/show
+    defaults: { _controller: "AppBundle:Formateur:show" }
+    methods:  GET
+
+
+

@@ -1,0 +1,12 @@
+apprenant_index:
+    path:     /
+    defaults: { _controller: "AppBundle:Apprenant:index" }
+    methods:  GET
+
+apprenant_show:
+    path:     /{id}/show
+    defaults: { _controller: "AppBundle:Apprenant:show" }
+    methods:  GET
+
+
+

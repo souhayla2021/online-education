@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Forumsujet</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ forumSujet.id }}</td>
+            </tr>
+            <tr>
+                <th>Titre</th>
+                <td>{{ forumSujet.titre }}</td>
+            </tr>
+            <tr>
+                <th>Slug</th>
+                <td>{{ forumSujet.slug }}</td>
+            </tr>
+            <tr>
+                <th>Datecreation</th>
+                <td>{% if forumSujet.dateCreation %}{{ forumSujet.dateCreation|date('Y-m-d H:i:s') }}{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Datemodification</th>
+                <td>{% if forumSujet.dateModification %}{{ forumSujet.dateModification|date('Y-m-d H:i:s') }}{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Contenu</th>
+                <td>{{ forumSujet.contenu }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('forumsujet_index') }}">Back to the list</a>
+        </li>
+    </ul>
+{% endblock %}

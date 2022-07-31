@@ -1,0 +1,34 @@
+{% extends 'backend/base.html.twig' %}
+
+{% block body %}
+    <h1>Inscriptions list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Datecreation</th>
+                <th>Valider</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for inscription in inscriptions %}
+            <tr>
+                <td><a href="{{ path('inscription_show', { 'id': inscription.id }) }}">{{ inscription.id }}</a></td>
+                <td>{% if inscription.dateCreation %}{{ inscription.dateCreation|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>{% if inscription.valider %}Yes{% else %}No{% endif %}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('inscription_show', { 'id': inscription.id }) }}">show</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    
+{% endblock %}
